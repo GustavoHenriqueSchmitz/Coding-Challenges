@@ -1,27 +1,38 @@
-def reverseOnlyLetters(points: str) -> bool:
-    
-    index = 0
-    while index < len(points):
-        if points[index] == "+":
-            points[index] = (int(points[index-1]) + int(points[index-2]))
-            index += 1
-        elif points[index] == "D":
-            points[index] = int(points[index-1]) * 2
-            index += 1
-        elif points[index] == "C":
-            del points[index]
-            del points[index-1]
-            index -= 1
-        else:
-            index += 1
-            
-    score = 0
-    for point in points:
-        score += int(point)
-        
-    return score
+def calPoints(scores) -> int:
+    """
+    :type ops: List[str] - List of operations
+    :rtype: int - Sum of scores after performing all operations
+    """
+    deleted_score = None
+    formatted_scores = []
+    for score in scores:
+        if score.replace("-", "").isdigit():
+            formatted_scores.append(int(score))
+            deleted_score = None
+        elif score == "+":
+            formatted_scores.append(formatted_scores[-1] + formatted_scores[-2])
+            deleted_score = None
+        elif score == "D":
+            formatted_scores.append(formatted_scores[-1] * 2)
+            deleted_score = None
+        elif score == "C":
+            index = scores.index(score)
+            if scores[::-1][index-1] == "C" and deleted_score != None:
+                formatted_scores.append(deleted_score)
+                deleted_score = None
+            elif scores[index-1] == "C" and deleted_score == None:
+                deleted_score = formatted_scores[-1]
+                del formatted_scores[-1]
+            else:
+                deleted_score = formatted_scores[-1]
+                del formatted_scores[-1]
+    final_result = 0
+    for score in formatted_scores:
+        final_result += score
+    return final_result
 
-if __name__ == "__main__":
-    points = ["1"]
-    result = reverseOnlyLetters(points)
-    print(result)
+if __name__ == '__main__':
+    line = input()
+    scores = line.strip().split()
+
+    print(calPoints(scores))
