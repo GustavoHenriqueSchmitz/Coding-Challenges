@@ -12,9 +12,10 @@ def reverseOnlyLetters(text: str) -> bool:
         if index_splited_list >= len(splited_text):
             return "".join(reverted_list)
         
-        if splited_text[index_splited_list].isalpha() == True:
+        character = splited_text[index_splited_list]
+        if character.isalpha() == True:
             if reverted_list[index_reverted_list] == None:
-                reverted_list[index_reverted_list] = splited_text[index_splited_list]
+                reverted_list[index_reverted_list] = character
                 index_reverted_list -= 1
                 index_splited_list += 1
             else:

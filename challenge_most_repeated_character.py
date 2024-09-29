@@ -1,22 +1,19 @@
 def getMostRepeatedCharacter(text: str) -> bool:
-    quantidades = {}
+    characters_quantity = {}
     for character in text:
         if character.isalpha():
-            if character in quantidades.keys():
-                quantidades[character] += 1
+            if character not in characters_quantity:
+                characters_quantity[character] = 1
             else:
-                quantidades[character] = 1
+                characters_quantity[character] += 1
     
-    most_repeated = { 'quantidade': 0, 'nome': '' }
-    for key, value in quantidades.items():
-        if value > most_repeated['quantidade']:
-            most_repeated = { 'quantidade': value, 'nome': key }
-    
-    return most_repeated
+    most_repeated_character = {"character": "", "total": 0}
+    for character, total in characters_quantity.items():
+        if total > most_repeated_character["total"]:
+            most_repeated_character = {"character": character, "total": total}
+    return most_repeated_character["character"]
 
 if __name__ == "__main__":
     text = 'abcddefda1111133333333'
-    
     result = getMostRepeatedCharacter(text)
-    
     print(result)
