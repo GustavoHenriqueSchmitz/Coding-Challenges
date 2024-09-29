@@ -1,2 +1,2 @@
 # Coding-Challenges
-A set of coding challenges i faced.
+A set of logical coding challenges i faced.
