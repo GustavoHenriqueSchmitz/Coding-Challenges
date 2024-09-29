@@ -1,5 +1,4 @@
 def getMostRepeatedCharacter(text: str) -> bool:
-    
     quantidades = {}
     for character in text:
         if character.isalpha():
