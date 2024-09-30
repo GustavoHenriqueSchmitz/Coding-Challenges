@@ -1,18 +1,12 @@
 def add_two_numbers(listNumber1: int, listNumber2: int) -> bool:
-    number1 = int(''.join(map(str, listNumber1)))
-    number2 = number = int(''.join(map(str, listNumber2)))
-    summed_numbers = number1 + number2
-    
-    final_result = ''
-    for number in reversed(str(summed_numbers)):
-        final_result += number
-    
-    return int(final_result)
+    total_sum = int("".join(map(str, listNumber1))) + int("".join(map(str, listNumber2)))
+    result = list(str(total_sum))
+    result.reverse()
+    return result
 
 if __name__ == "__main__":
-    number1 = [0]
-    number2 = [0]
+    numbers1 = [3, 2, 1]
+    numbers2 = [3, 2, 1]
     
-    result = add_two_numbers(number1, number2)
-    
+    result = add_two_numbers(numbers1, numbers2)
     print(result)
