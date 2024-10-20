@@ -1,8 +1,4 @@
 def calPoints(scores) -> int:
-    """
-    :type ops: List[str] - List of operations
-    :rtype: int - Sum of scores after performing all operations
-    """
     deleted_score = None
     formatted_scores = []
     for score in scores:
@@ -16,13 +12,9 @@ def calPoints(scores) -> int:
             formatted_scores.append(formatted_scores[-1] * 2)
             deleted_score = None
         elif score == "C":
-            index = scores.index(score)
-            if scores[::-1][index-1] == "C" and deleted_score != None:
+            if deleted_score != None:
                 formatted_scores.append(deleted_score)
                 deleted_score = None
-            elif scores[index-1] == "C" and deleted_score == None:
-                deleted_score = formatted_scores[-1]
-                del formatted_scores[-1]
             else:
                 deleted_score = formatted_scores[-1]
                 del formatted_scores[-1]
@@ -33,6 +25,5 @@ def calPoints(scores) -> int:
 
 if __name__ == '__main__':
     line = input()
-    scores = line.strip().split()
-
+    scores = list(line.strip())
     print(calPoints(scores))

@@ -1,32 +1,31 @@
 def reverseOnlyLetters(text: str) -> bool:
     splited_text = list(text)
-    reverted_list = [None] * len(splited_text)
+    reverted_text = [None] * len(splited_text)
     
     for index, character in enumerate(splited_text):
         if character.isalpha() == False:
-            reverted_list[index] = character
+            reverted_text[index] = character
     
-    index_splited_list = 0
-    index_reverted_list = -1
+    index_splited_text = 0
+    index_reverted_text = -1
     while True:
-        if index_splited_list >= len(splited_text):
-            return "".join(reverted_list)
+        if index_splited_text >= len(splited_text):
+            return "".join(reverted_text)
         
-        character = splited_text[index_splited_list]
+        character = splited_text[index_splited_text]
         if character.isalpha() == True:
-            if reverted_list[index_reverted_list] == None:
-                reverted_list[index_reverted_list] = character
-                index_reverted_list -= 1
-                index_splited_list += 1
+            if reverted_text[index_reverted_text] == None:
+                reverted_text[index_reverted_text] = character
+                index_reverted_text -= 1
+                index_splited_text += 1
             else:
-                index_reverted_list -= 1
+                index_reverted_text -= 1
                 continue
         else:
-            index_splited_list += 1
+            index_splited_text += 1
             continue
-    
+
 if __name__ == "__main__":
     text = 'a-bC-dEf=ghlj!!'
     result = reverseOnlyLetters(text)
     print(result)
-    
