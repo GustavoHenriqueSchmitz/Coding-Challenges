@@ -47,6 +47,6 @@ Output: "j-lh-gfE=dCb!!"
 ## Author
 **Gustavo Henrique Schmitz**
 
-**Linkedin: **https://www.linkedin.com/in/gustavo-henrique-schmitz
-**Portfolio: **https://gustavohenriqueschmitz.com
-**Email: **gustavohenriqueschmitz568@gmail.com
+**Linkedin:** https://www.linkedin.com/in/gustavo-henrique-schmitz  
+**Portfolio:** https://gustavohenriqueschmitz.com  
+**Email:** gustavohenriqueschmitz568@gmail.com  
