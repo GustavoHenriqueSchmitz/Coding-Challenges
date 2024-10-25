@@ -3,6 +3,9 @@
 ## About the repository
 Basically it contains some logical coding challenges i've faced. Creating this to share a little of my logical and problem solving abilities as a software developer.
 
+## Used Technologies
+- Python
+
 ## About each challenge
 
 ### Add two numbers
@@ -39,9 +42,6 @@ The goal of this challenge is to reverse only the alphabetic characters in a str
 Input: "a-bC-dEf=ghlj!!"
 Output: "j-lh-gfE=dCb!!"
 - Here, only the letters are reversed while keeping the punctuation and equal signs in place​
-
-## Used Technologies
-- Python
 
 
 ## Author
