@@ -43,6 +43,18 @@ Input: "a-bC-dEf=ghlj!!"
 Output: "j-lh-gfE=dCb!!"
 - Here, only the letters are reversed while keeping the punctuation and equal signs in place​
 
+### Longest Palindrome String
+The goal of this challenge is to find the longest palindromic substring within a given string. A palindrome is a string that reads the same forward and backward. If no palindrome longer than 2 characters exists, the function should return "none".
+
+- The function iterates through the string, expanding around each character (or pair of characters) to identify palindromes. It keeps track of the longest palindrome found during the process.
+- Example:
+Input: "hellosannasmith"
+Output: "sannas"
+    - The substring "sannas" is the longest palindrome in the input string.
+- Example:
+Input: "abcdefg"
+Output: "none"
+    - Here, no palindrome longer than 2 characters exists, so the function returns "none".
 
 ## Author
 **Gustavo Henrique Schmitz**
