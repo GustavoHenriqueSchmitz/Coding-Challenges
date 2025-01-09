@@ -14,8 +14,8 @@ In this problem, you're given two non-negative integers represented as linked li
 - The function simulates the addition of two numbers by traversing the linked lists simultaneously, handling carry-over just like manual addition.
 - As a constraint, neither of the numbers has leading zeros, except the number "0" itself.
 - Example:
-Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-Output: (7 -> 0 -> 8) (since 342 + 465 = 807)
+Input: [2, 4, 3] + [5, 6, 4]
+Output: [7, 0, 8] (since 342 + 465 = 807)
 
 ### Baseball Game
 You are tasked with calculating the total score of a baseball game. The game has multiple rounds, and in each round, certain operations can modify the score based on the previous rounds.
